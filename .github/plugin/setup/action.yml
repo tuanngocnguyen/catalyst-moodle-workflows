@@ -77,6 +77,7 @@ runs:
         mkdir -p "$GITHUB_WORKSPACE/moodledata"
         echo "::endgroup::"
         END_TS=$(date +%s)
+        echo "MOODLE_DIR=$GITHUB_WORKSPACE/moodle" >> "$GITHUB_ENV"
         echo "Extract artifacts took $((END_TS - START_TS))s"
 
     - name: Add moodle-plugin-ci binaries to PATH
